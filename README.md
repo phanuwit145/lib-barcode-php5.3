@@ -1,19 +1,23 @@
 # CodeItNow Barcode & QrCode Generator
 
 ## Requirements
+
 You must have php >= 5.3.2 installed and GD extension enabled.
 
-## Installation - 
+## Installation -
+
 CodeItNow Barcode & Qr Code Generator can install by composer.
 
 ```
-composer require komgrip/barcode
-``` 
+composer require phanuwit145/lib-barcode-php5.3
+```
 
 ## Uses -
+
 Barcode and Qr Code Generator library give output as base64 encoded png image.
 
 ### Example - QrCode:
+
 ```php
 use CodeItNow\BarcodeBundle\Utils\QrCode;
 
@@ -31,10 +35,13 @@ $qrCode
 ;
 echo '<img src="data:'.$qrCode->getContentType().';base64,'.$qrCode->generate().'" />';
 ```
+
 ### Sample Image - QrCode:
+
 ![CodeItNow QrCode Generator](/CodeItNow/BarcodeBundle/Resources/image/sample_qrcode.png?raw=true)
 
 ### Example - Code128:
+
 ```php
 use CodeItNow\BarcodeBundle\Utils\BarcodeGenerator;
 
@@ -50,41 +57,49 @@ echo '<img src="data:image/png;base64,'.$code.'" />';
 ```
 
 ### Example - Codabar:
+
 ```php
 $barcode->setText("A0123456789C");
 $barcode->setType(BarcodeGenerator::Codabar);
 ```
 
 ### Example - Code11:
+
 ```php
 $barcode->setText("0123456789");
 $barcode->setType(BarcodeGenerator::Code11);
 ```
 
 ### Example - Code39:
+
 ```php
 $barcode->setText("0123456789");
 $barcode->setType(BarcodeGenerator::Code39);
 ```
 
 ### Example - Code39-Extended:
+
 ```php
 $barcode->setText("0123456789");
 $barcode->setType(BarcodeGenerator::Code39Extended);
 ```
 
 ### Example - Ean128:
+
 ```php
 $barcode->setText("00123456789012345675");
 $barcode->setType(BarcodeGenerator::Ean128);
 ```
 
 ### Example - Gs1128:
+
 ```php
 $barcode->setText("00123456789012345675");
 $barcode->setType(BarcodeGenerator::Gs1128);
 ```
+
 ### Example - Gs1128 (with no length limit and unknown identifier):
+
 ```php
 $barcode->setText("4157707266014651802001012603068039000000006377069620171215");
 $barcode->setType(BarcodeGenerator::Gs1128);
@@ -93,42 +108,49 @@ $barcode->setAllowsUnknownIdentifier(true);
 ```
 
 ### Example - I25:
+
 ```php
 $barcode->setText("00123456789012345675");
 $barcode->setType(BarcodeGenerator::I25);
 ```
 
 ### Example - Isbn:
+
 ```php
 $barcode->setText("0012345678901");
 $barcode->setType(BarcodeGenerator::Isbn);
 ```
 
 ### Example - Msi:
+
 ```php
 $barcode->setText("0012345678901");
 $barcode->setType(BarcodeGenerator::Msi);
 ```
 
 ### Example - Postnet:
+
 ```php
 $barcode->setText("01234567890");
 $barcode->setType(BarcodeGenerator::Postnet);
 ```
 
 ### Example - S25:
+
 ```php
 $barcode->setText("012345678901");
 $barcode->setType(BarcodeGenerator::S25);
 ```
 
 ### Example - Upca:
+
 ```php
 $barcode->setText("012345678901");
 $barcode->setType(BarcodeGenerator::Upca);
 ```
 
 ### Example - Upca:
+
 ```php
 $barcode->setText("012345");
 $barcode->setType(BarcodeGenerator::Upce);
